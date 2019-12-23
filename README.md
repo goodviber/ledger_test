@@ -1,36 +1,31 @@
-# Ledger
+# Work simulation task
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ledger`. To experiment with that code, run `bin/console` for an interactive prompt.
+Your task is to write some code that processes transactions from a ledger (see `example_ledger.csv`). Every line in the ledger represents a transfer of money from one account to another account.
 
-TODO: Delete this and the text above, and describe your gem
+The code should be able to answer:
 
-## Installation
+- What's the balance of a given account at the end of a given date?
 
-Add this line to your application's Gemfile:
+## Assumptions:
 
-```ruby
-gem 'ledger'
+- All accounts start with a balance of zero
+- The ledger could have millions of rows
+
+## Important:
+
+**You should approach this as if the code will become part of a live, production system.**
+
+## `example_ledger.csv`
+
+```
+date,from,to,amount
+2020-01-16,james,alice,25.00
+2020-01-17,james,heather,20.00
+2020-01-18,heather,james,100.00
+2020-01-20,alice,heather,84.00
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install ledger
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ledger.
-
+`bundle install`
+`rake generate_ledger` to generate csv file
+`rake run[ledger.csv <account_name> <query_date>]` to run application
+`rspec spec` to run tests
