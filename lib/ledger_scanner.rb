@@ -1,7 +1,6 @@
 require 'csv'
 require 'bigdecimal'
 require_relative 'account_calc'
-require 'byebug'
 
 class LedgerScanner
 
